@@ -1,0 +1,6 @@
+nombre,estado,precio,numeroCuotasVisa,marca,modelo,memoriaRAM,procesador,almacenamientoInterno,extiendeMemoria,cuboCargadorIncluido,es5g,nivelVolumen,nivelBrillo,videoActual,tipoDiscoDuro,velocidadCPU,velocidadGPU
+iPhone 13,true,1099.99,12,Apple,iPhone 13,8,Apple A15 Bionic,128,true,true,true,75,60,1,,,,
+Samsung Galaxy S21,true,899.99,12,Samsung,Galaxy S21,12,Qualcomm Snapdragon 888,256,false,true,true,80,70,1,,,,
+Dell XPS 13,true,1199.99,12,Dell,XPS 13,16,Intel Core i7,512,false,false,,90,80,1,SSD,2.8,0.7
+HP Pavilion,true,799.99,12,HP,Pavilion 15,12,AMD Ryzen 5,256,false,true,false,70,70,1,SSD,2.4,0.6
+Sony Xperia 1,true,999.99,12,Sony,Xperia 1,6,Snapdragon 855,128,false,true,false,65,60,1,,,,
