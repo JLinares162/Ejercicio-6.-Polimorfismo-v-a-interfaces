@@ -1,6 +1,13 @@
+/**
+ * La clase Computadora representa un dispositivo electrónico que tiene
+ * características específicas de una computadora, como memoria RAM, procesador,
+ * almacenamiento interno y capacidades de video.
+ */
 public class Computadora extends DispositivoElectronico {
-    
+
     private int memoriaRAM;
+    private String procesador;
+    private int almacenamientoInterno;
     private String tipoDiscoDuro;
     private double velocidadCPU;
     private double velocidadGPU;
@@ -8,11 +15,32 @@ public class Computadora extends DispositivoElectronico {
     private int nivelBrillo;
     private int videoActual;
 
-    public Computadora(String nombre, double precio, int numeroCuotasVisa, String marca, String modelo, int memoriaRAM,
-            String tipoDiscoDuro, double velocidadCPU, double velocidadGPU, int nivelVolumen, int nivelBrillo,
-            int videoActual) {
-        super(nombre, precio, numeroCuotasVisa, marca, modelo);
+    /**
+     * Constructor para inicializar una instancia de Computadora con sus atributos.
+     * 
+     * @param nombre              El nombre de la computadora.
+     * @param estado              El estado de la computadora (encendida o apagada).
+     * @param precio              El precio de la computadora.
+     * @param numeroCuotasVisa    El número de cuotas Visa disponibles.
+     * @param marca               La marca de la computadora.
+     * @param modelo              El modelo de la computadora.
+     * @param memoriaRAM          La cantidad de memoria RAM en gigabytes.
+     * @param procesador          El tipo de procesador de la computadora.
+     * @param almacenamientoInterno La capacidad de almacenamiento interno en gigabytes.
+     * @param tipoDiscoDuro       El tipo de disco duro de la computadora.
+     * @param velocidadCPU        La velocidad de la CPU en gigahercios (GHz).
+     * @param velocidadGPU        La velocidad de la GPU en gigahercios (GHz).
+     * @param nivelVolumen        El nivel de volumen del dispositivo.
+     * @param nivelBrillo         El nivel de brillo de la pantalla (si es aplicable).
+     * @param videoActual         El número del video actualmente reproducido.
+     */
+    public Computadora(String nombre, boolean estado, double precio, int numeroCuotasVisa, String marca, String modelo,
+            int memoriaRAM, String procesador, int almacenamientoInterno, String tipoDiscoDuro, double velocidadCPU,
+            double velocidadGPU, int nivelVolumen, int nivelBrillo, int videoActual) {
+        super(nombre, estado, precio, numeroCuotasVisa, marca, modelo);
         this.memoriaRAM = memoriaRAM;
+        this.procesador = procesador;
+        this.almacenamientoInterno = almacenamientoInterno;
         this.tipoDiscoDuro = tipoDiscoDuro;
         this.velocidadCPU = velocidadCPU;
         this.velocidadGPU = velocidadGPU;
@@ -21,12 +49,30 @@ public class Computadora extends DispositivoElectronico {
         this.videoActual = videoActual;
     }
 
+    // Métodos getter y setter para otros atributos...
+
     public int getMemoriaRAM() {
         return memoriaRAM;
     }
 
     public void setMemoriaRAM(int memoriaRAM) {
         this.memoriaRAM = memoriaRAM;
+    }
+
+    public String getProcesador() {
+        return procesador;
+    }
+
+    public void setProcesador(String procesador) {
+        this.procesador = procesador;
+    }
+
+    public int getAlmacenamientoInterno() {
+        return almacenamientoInterno;
+    }
+
+    public void setAlmacenamientoInterno(int almacenamientoInterno) {
+        this.almacenamientoInterno = almacenamientoInterno;
     }
 
     public String getTipoDiscoDuro() {
@@ -77,13 +123,24 @@ public class Computadora extends DispositivoElectronico {
         this.videoActual = videoActual;
     }
 
+    /**
+     * Representación de cadena de la instancia de Computadora.
+     *
+     * @return Una cadena que describe los atributos de la computadora.
+     */
     @Override
     public String toString() {
-        return "Computadora [memoriaRAM=" + memoriaRAM + ", tipoDiscoDuro=" + tipoDiscoDuro + ", velocidadCPU="
-                + velocidadCPU + ", velocidadGPU=" + velocidadGPU + ", nivelVolumen=" + nivelVolumen + ", nivelBrillo="
-                + nivelBrillo + ", videoActual=" + videoActual + "]";
+        return "Computadora [nombre=" + nombre + ", estado=" + estado + ", precio=" + precio + ",  numeroCuotasVisa="
+                + numeroCuotasVisa + ", marca=" + marca + ", modelo=" + modelo + "memoriaRAM=" + memoriaRAM
+                + "procesador=" + procesador + "almacenamientoInterno=" + almacenamientoInterno + ", tipoDiscoDuro="
+                + tipoDiscoDuro + ", velocidadCPU=" + velocidadCPU + ", velocidadGPU=" + velocidadGPU
+                + ", nivelVolumen=" + nivelVolumen + ", nivelBrillo=" + nivelBrillo + ", videoActual=" + videoActual + "]";
     }
 
+    /**
+     * Muestra información adicional específica de la computadora, como la memoria RAM,
+     * el tipo de disco duro y las velocidades de CPU y GPU.
+     */
     @Override
     public void mostrarInformacionAdicional() {
         System.out.println("Información de la computadora: ");
@@ -120,13 +177,17 @@ public class Computadora extends DispositivoElectronico {
         System.out.println("Niveles de volumen y brillo: "); // Mostrar niveles actuales
     }
 
+    /**
+     * Controla la selección de videos disponibles en la computadora, mostrando un menú.
+     */
     @Override
     public void controlarVideos() {
-        if (estado) {
-            // Implementar la lógica para controlar la reproducción de videos
-            // Aquí puedes cambiar el video actual, pausar, parar, etc.
-        } else {
-            System.out.println("La computadora está apagada. Enciéndela para controlar los videos.");
-        }
+        System.out.println("Menú de Selección de Video:");
+        System.out.println("1. Video 1");
+        System.out.println("2. Video 2");
+        System.out.println("3. Video 3");
+        System.out.println("4. Video 4");
+        System.out.println("5. Video 5");
+        System.out.println("Seleccione una opción: ");
     }
 }
